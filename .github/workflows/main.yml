@@ -41,7 +41,7 @@ jobs:
           pip install requests
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Show critical severity summary
-      run: ${GITHUB_WORKSPACE}/get-app-critical-findings.py vulnado
+      run: python ${GITHUB_WORKSPACE}/get-app-critical-findings.py vulnado
       env:
         SHIFTLEFT_API_TOKEN: ${{ secrets.SHIFTLEFT_API_TOKEN }}
         SHIFTLEFT_ORG_ID: ${{ secrets.SHIFTLEFT_ORG_ID }}
